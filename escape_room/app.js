@@ -1,31 +1,78 @@
 const readlineSync = require("readline-sync");
 const userName = readlineSync.question("What is your name? ");
-  console.log(`Hello ${userName}! Welcome to my escape room. You will be prompted to make choices that will either help you escape or lead to your horrific death!`)
+console.log(
+  `Hello ${userName}! Welcome to my escape room. You will be prompted to make choices that will either help you escape or lead to your horrific death!`
+);
 
-if (readlineSync.keyInYN('Do you wish to continue?')) {
-    gameOptions = ['Find the key', 'Put your hand in a hole', 'Open the door'],
-    index = readlineSync.keyInSelect(gameOptions, 'What would you like to do?');
+if (readlineSync.keyInYN("Do you wish to continue?")) {
+  let foundKey = false;
 
-switch (index){
-    case 0:
-    console.log(`You found the key! You have opened the door and are now free to leave.`) 
-    break;
+  while (true) {
+    const gameOptions = [
+        "Search for the key",
+        "Put your hand in a hole",
+        "Open the door",
+      ],
+      index = readlineSync.keyInSelect(
+        gameOptions,
+        "What would you like to do?"
+      );
 
-    case 1:
-    console.log(`You put your hand in a hole and died!`)
-    break;
+    if (index === 1) {
+      console.log(`You put your hand in a hole and died!`);
+      break;
+    }
 
-    case 2:
-    console.log(`The door is locked, silly muggle. You can't open it without the key!`)
-    break;
-  default:
-    console.log(`Invalid option you tricksy hobbit!`)
-}  
-  
+    if (index === 2) {
+      if (foundKey) {
+        console.log("You have opened the door and are now free to leave.");
+        break;
+      }
+
+      if (!foundKey) {
+        console.log(`You can't leave the room, you haven't found the key!`);
+        continue;
+      }
+    }
+    if (index === 0) {
+      if (foundKey) {
+        console.log(`You have already found the key, you idiot!`);
+        continue;
+      }
+      if (Math.random() < 0.3) {
+        foundKey = true;
+        console.log(
+          `You found the key and are now free to go and open the door.`
+        );
+        continue;
+      }
+      console.log(`Keep searching for the key`);
+    }
+
+    // switch (index) {
+    //   case 0:
+    //     console.log(`You search the room for the key...`);
+    //     if (Math.random() < 0.5){
+    //       // Randomly simulate if the key is found
+    //       console.log(
+    //         "You found the key! You have opened the door and are now free to leave."
+    //       );
+    //     }
+    //     break;
+
+    //   case 1:
+    //     console.log(`You put your hand in a hole and died!`);
+    //     break;
+
+    //   case 2:
+    //     console.log(
+    //
+    //     );
+    //     break;
+    //   default:
+    //     console.log(`Invalid option you tricksy hobbit!`);
+    // }
+  }
 } else {
-
-  console.log('Bye Bye...');
+  console.log("Bye Bye...");
 }
-
-
-

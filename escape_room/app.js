@@ -48,30 +48,6 @@ if (readlineSync.keyInYN("Do you wish to continue?")) {
       }
       console.log(`Keep searching for the key`);
     }
-
-    // switch (index) {
-    //   case 0:
-    //     console.log(`You search the room for the key...`);
-    //     if (Math.random() < 0.5){
-    //       // Randomly simulate if the key is found
-    //       console.log(
-    //         "You found the key! You have opened the door and are now free to leave."
-    //       );
-    //     }
-    //     break;
-
-    //   case 1:
-    //     console.log(`You put your hand in a hole and died!`);
-    //     break;
-
-    //   case 2:
-    //     console.log(
-    //
-    //     );
-    //     break;
-    //   default:
-    //     console.log(`Invalid option you tricksy hobbit!`);
-    // }
   }
 } else {
   console.log("Bye Bye...");

@@ -1,0 +1,71 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+header {
+    font-size: 22px;
+    background-color: dodgerblue;
+    text-align: center;
+    grid-column: 1 / 13;
+}
+
+/* 1 - 4 */
+nav {
+    background-color: darkorchid;
+    grid-column: 8 / 13;
+}
+
+nav > div {
+    border: 1px solid black;
+    border-radius: 3px;
+    text-align: center;
+}
+main {
+    background-color: darkgreen;
+    grid-column: 1 / 8;
+    grid-row: 2 / 3;
+}
+
+/* 1 - 12 */
+footer {
+    font-size: 20px;
+    background-color: darkslateblue;
+    text-align: center;
+    grid-column: 1 / span 12;
+}
+
+
+
+
+
+
+#grid-container > div {
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;x
+}
+
+#grid-container > div:nth-child(even){
+    background-color: dodgerblue;
+}
+
+#grid-container > div:nth-child(odd){
+    background-color: firebrick;
+}
+
+#grid-container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(4, 100px);
+}

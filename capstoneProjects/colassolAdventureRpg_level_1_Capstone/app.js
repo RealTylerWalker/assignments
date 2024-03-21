@@ -18,15 +18,15 @@ class character {
   }
 }
 
-let heroWeaponInventory = ["nothing"];
+let heroWeaponInventory = [];
 
-const hero = new character(playerName, 100, 5, heroWeaponInventory);
+const hero = new character(playerName, 1000, 11, heroWeaponInventory);
 const badGuy1 = new character("Tommy 'The Rugrat' Pickels", 45, 5, [
   "reusable diaper",
   "safety pin",
   "resourcefulness",
 ]);
-const badGuy2 = new character("Danger Nate", 100, 8, [
+const badGuy2 = new character("Danger Nate", 65, 8, [
   "Gold Tooth",
   "Swiss Army Knife",
   "brass knuckles",
@@ -44,6 +44,12 @@ const getRandomNumber = (min, max) => {
 };
 
 while (isGameRunning) {
+  if (enemies.length === 0) {
+    console.log(
+      `Congrats ${hero.name}, you have conquered the land of Intrepidshire!`
+    );
+    process.exit();
+  }
   let action = readline.question(
     `What would you like to do? Press [w] to walk, [i] to see your inventory, or [hk] for something unexpected: `,
     { limit: ["w", "i", "hk"] }
@@ -69,9 +75,9 @@ while (isGameRunning) {
         doNothing();
         continue;
       } else if (fightAction === 0) {
-        fight();
+        fight(currentEnemy);
       } else if (fightAction === 1) {
-        retreat();
+        retreat(currentEnemy);
         continue;
       } else if (fightAction === 2) {
         somethingUnexpected();
@@ -93,24 +99,68 @@ while (isGameRunning) {
   }
 }
 
-function fight() {
+function fight(currentEnemy) {
   console.log("");
-  console.log(`You have chosen to fight ${currentEnemy.name}`);
+  console.log(`You must fight ${currentEnemy.name}`);
   console.log("");
+
+  while (hero.healthPoints > 0 && currentEnemy.healthPoints > 0) {
+    currentEnemy.healthPoints -= hero.attackPoints;
+    console.log(
+      `Your attack took ${hero.attackPoints} healthpoints from ${currentEnemy.name}. ${currentEnemy.name}, now has ${currentEnemy.healthPoints} health points!`
+    );
+    hero.healthPoints -= currentEnemy.attackPoints;
+    console.log(
+      `${currentEnemy.name} bested you and took ${currentEnemy.attackPoints} health points from you. You now have ${hero.healthPoints} health points left.`
+    );
+    if (hero.healthPoints <= 0) {
+      console.log(`${currentEnemy.name} has defeated you. Good bye.`);
+      isGameRunning = false;
+    } else if (currentEnemy.healthPoints <= 0) {
+      console.log("");
+      console.log(
+        `Well done ${hero.name}, you have defeated ${currentEnemy.name}! `
+      );
+      console.log("");
+      if (currentEnemy.inventory.length > 0) {
+        let randomIndex = getRandomNumber(0, currentEnemy.inventory.length - 1);
+        let itemToTake = currentEnemy.inventory[randomIndex];
+        heroWeaponInventory.push(itemToTake);
+        console.log(`You obtained ${itemToTake} from ${currentEnemy.name}!`);
+        currentEnemy.inventory.splice(randomIndex, 1); // Remove the item from enemy's inventory
+      }
+      enemies = enemies.filter((item) => item.name !== currentEnemy.name);
+    }
+  }
 }
 
-function retreat() {
+function retreat(currentEnemy) {
   console.log("");
-  console.log(`You have chosen to retreat!`);
+  console.log(`You have chosen to retreat from ${currentEnemy.name}`);
   console.log("");
   console.log("...pussy");
   console.log("");
+  let escapeChance = getRandomNumber(1, 2);
+  if (escapeChance === 1) {
+    console.log("");
+    console.log(
+      `Congrats ${hero.name}, you escaped from ${currentEnemy.name}! `
+    );
+    console.log("");
+  } else if (escapeChance === 2) {
+    console.log("");
+    console.log(
+      `Unfortunately, you failed to escape the grasp of ${currentEnemy.name}. You must continue to fight!`
+    );
+    console.log("");
+    fight(currentEnemy);
+  }
 }
 
 function somethingUnexpected() {
   console.log("");
   console.log(
-    `You chosen a Samurai suicide, remove your sword and insert into abdomen. Goodbye!`
+    `You have chosen a Samurai suicide, remove your sword and insert into abdomen. Goodbye!`
   );
   console.log("");
 }

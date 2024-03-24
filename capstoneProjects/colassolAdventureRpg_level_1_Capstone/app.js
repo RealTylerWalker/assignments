@@ -21,18 +21,22 @@ class character {
     this.inventory = inventory;
   }
   printInventory() {
-    console.log(`Name: ${this.name}`);
-    console.log(`Inventory: ${this.inventory}`);
+    console.log("");
+    if (this.inventory.length === 0) {
+      console.log("There are no items in your inventory!");
+      console.log("");
+    } else {
+      console.log(`Items in your possession: ${this.inventory}`);
+      console.log("");
+    }
   }
 }
 
 // hero's weapon inventory starts with an empty array and items are pushed to it as enemies are defetead
 
-let heroWeaponInventory = [];
-
 // Instantiations of my character constructor function
 
-const hero = new character(playerName, 1000, 11, heroWeaponInventory);
+const hero = new character(playerName, 1000, 11, []);
 const badGuy1 = new character("Tommy 'The Rugrat' Pickels", 45, 5, [
   " reusable diaper",
   " safety pin",
@@ -80,9 +84,7 @@ while (isGameRunning) {
   // loop question option for checking inventory
 
   if (action === "i") {
-    console.log("");
-    console.log(`Items in your possession: ${heroWeaponInventory}`);
-    console.log("");
+    hero.printInventory();
   }
 
   // loop question option to walk
@@ -135,6 +137,7 @@ while (isGameRunning) {
         console.log("Invalid option selected.");
         console.log("");
       }
+
       // if my getRandomNumber function doesn't return an enemey the following statement is fired
     } else {
       console.log("");
@@ -157,6 +160,8 @@ while (isGameRunning) {
   }
 }
 
+// end of base level loop
+
 // *** Definitions of functions ***
 
 // fight function
@@ -169,7 +174,7 @@ function fight(currentEnemy) {
   // fight function while loop
 
   while (hero.healthPoints > 0 && currentEnemy.healthPoints > 0) {
-    // If hero wins a battle, enemies health points are subtracted by the amount of my attack points
+    //When the enemy hits you, his attack points are subtracted from you
 
     currentEnemy.healthPoints -= hero.attackPoints;
     console.log("");
@@ -207,8 +212,11 @@ function fight(currentEnemy) {
 
       if (currentEnemy.inventory.length > 0) {
         let randomIndex = getRandomNumber(0, currentEnemy.inventory.length - 1);
+
+        // inventory item is pushed to heroWeaponInventory
+
         let itemToTake = currentEnemy.inventory[randomIndex];
-        heroWeaponInventory.push(itemToTake);
+        hero.inventory.push(itemToTake);
         console.log("");
         console.log(`You obtained ${itemToTake} from ${currentEnemy.name}!`);
         console.log("");

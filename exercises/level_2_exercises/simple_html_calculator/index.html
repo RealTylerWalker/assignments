@@ -9,31 +9,38 @@
     </head>
 
     <body>
-        <div class="calcContainer">
-            <form>
-                <div class="addDiv">
-                    <p>Add Two Numbers:</p>
-                    <input type="number" name="addFom" placeholder="First Number" />
-                    <span> + </span>
-                    <input type="number" name="addFom" placeholder="Second Number" />
-                    <button>Calculate</button>
-                </div>
-                <div class="subtractDiv">
-                    <p>Subtract Two Numbers:</p>
-                    <input type="number" name="addFom" placeholder="First Number" />
-                    <span> - </span>
-                    <input type="number" name="addFom" placeholder="Second Number" />
-                    <button>Calculate</button>
-                </div>
-                <div class="multiplyDiv">
-                    <p>Multiply Two Numbers:</p>
-                    <input type="number" name="addFom" placeholder="First Number" />
-                    <span> * </span>
-                    <input type="number" name="addFom" placeholder="Second Number" />
-                    <button>Calculate</button>
-                </div>
+
+
+        <div class="addDiv">
+            <form name="add" id="add">
+                <p>Add Two Numbers:</p>
+                <input type="number" name="firstAdditionNumber" placeholder="First Number" />
+                <span> + </span>
+                <input type="number" name="secondAdditionNumber" placeholder="Second Number" />
+                <button id="addButton">Calculate</button>
             </form>
         </div>
+
+        <div class="subtractDiv">
+            <form name="subtract" id="subtract">
+                <p>Subtract Two Numbers:</p>
+                <input type="number" name="firstSubtractionNumber" placeholder="First Number" />
+                <span> - </span>
+                <input type="number" name="secondSubtractionNumber" placeholder="Second Number" />
+                <button id="subtractButton">Calculate</button>
+            </form>
+        </div>
+
+        <div class="multiplyDiv">
+            <form name="multiply" id="multiply">
+                <p>Multiply Two Numbers:</p>
+                <input type="number" name="firstMultNumber" placeholder="First Number" />
+                <span> * </span>
+                <input type="number" name="secondMultNumber" placeholder="Second Number" />
+                <button id="multiplyButton">Calculate</button>
+            </form>
+        </div>
+
         <script src="app.js"></script>
     </body>
 

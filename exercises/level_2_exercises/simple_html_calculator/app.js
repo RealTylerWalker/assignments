@@ -6,8 +6,6 @@ addButton.addEventListener("click", function (event) {
   event.preventDefault();
   const firstAddNumber = parseFloat(addForm.firstAdditionNumber.value);
   const secondAddNumber = parseFloat(addForm.secondAdditionNumber.value);
-  addForm.firstAdditionNumber.value = "";
-  addForm.secondAdditionNumber.value = "";
 
   function addTwoNumbers(a, b) {
     return a + b;
@@ -23,8 +21,6 @@ subtractButton.addEventListener("click", function (event) {
   event.preventDefault();
   const firstSubNumber = parseFloat(subForm.firstSubtractionNumber.value);
   const secondSubNumber = parseFloat(subForm.secondSubtractionNumber.value);
-  subForm.firstSubtractionNumber = "";
-  subForm.secondSubtractionNumber = "";
 
   function subtractTwoNumbers(a, b) {
     return a - b;
@@ -40,8 +36,6 @@ multiplyButton.addEventListener("click", function (event) {
   event.preventDefault();
   let firstMultNumber = parseFloat(multForm.firstMultNumber.value);
   let secondMultNumber = parseFloat(multForm.secondMultNumber.value);
-  multForm.firstMultNumber.value = "";
-  multForm.secondMultNumber.value = "";
 
   function multiplyTwoNumbers(a, b) {
     return a * b;

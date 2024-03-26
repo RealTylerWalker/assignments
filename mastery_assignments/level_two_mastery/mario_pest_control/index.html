@@ -15,30 +15,37 @@
 
 
         <div class="divContainer">
-            <form>
+            <form name="pricing">
                 <div class="goomba">
                     <img src="pictures/goomba.png">
                     <span>
-                        Total Goombas: <input type="number">
+                        Total Goombas: <input type="number" name="goombaInput"> 5 coins per Goomba
                     </span>
                 </div>
 
                 <div class="bobOmb">
                     <img src="pictures/bobomb.png">
                     <span>
-                        Total Bob-ombs: <input type="number">
+                        Total Bob-ombs: <input type="number" name="bobOmbInput"> 7 coins per Bob-omb
                     </span>
                 </div>
 
                 <div class="cheepCheep">
                     <img src="pictures/cheepcheep.png">
                     <span>
-                        Total Cheep Cheeps: <input type="number">
+                        Total Cheep Cheeps: <input type="number" name="cheepCheepInput"> 11 coins per Cheep-cheep
                     </span>
                 </div>
                 <button class="calculate">Calculate Total Price</button>
             </form>
+            <br>
+            <br>
+            <div class="totalprice">
+                <span><strong>Total Coins:</strong></span>
+                <span id="priceBox"></span>
+            </div>
         </div>
+        <br>
         <br>
 
 

@@ -1,57 +1,42 @@
-// 1) Given an array of numbers, return a new array that has only the numbers that are 5 or greater.
-const numbers = [2, 3, 7, 1, 8, 38];
+// 1) Sort an array from smallest number to largest
+const numbers = [1, 3, 5, 2, 90, 20];
 
-let fiveOrGreater = numbers.filter((number) => number >= 5);
-console.log(fiveOrGreater);
+numbers.sort((a, b) => a - b);
+console.log(numbers);
 
-// 2) Given an array of numbers, return a new array that only includes the even numbers.
-const numbers1 = [2, 3, 7, 1, 8, 38];
+// numbers.sort(function (a, b) {
+//   return a - b;
+// });
+// console.log(numbers);
 
-let onlyEvenNumbers = numbers.filter((number) => number % 2 === 0);
-console.log(onlyEvenNumbers);
+// 2) Sort an array from largest number to smallest
 
-//3) Given an array of strings, return a new array that only includes those that are 5 characters or fewer in length
-const words = ["owl", "peanut", "bean", "whiskers", "cat", "kitty"];
+const otherNumbers = [1, 3, 5, 2, 90, 20];
 
-let onlyFiveCharacters = words.filter(function (word) {
-  if (word.length >= 5) {
-    return word;
-  }
-});
+otherNumbers.sort((a, b) => b - a);
+console.log(otherNumbers);
 
-console.log(onlyFiveCharacters);
+// 3) Sort an array from shortest string to longest
 
-//4) Given an array of people objects, return a new array that has filtered out all those who don't belong to the club.
+const stringLengthSort = ["dog", "wolf", "by", "family", "eaten"];
 
-const celebrities = [
-  { name: "Angelina Jolie", member: true },
-  { name: "Eric Jones", member: false },
-  { name: "Paris Hilton", member: true },
-  { name: "Kayne West", member: false },
-  { name: "Bob Ziroll", member: true },
+stringLengthSort.sort((a, b) => a.length - b.length);
+console.log(stringLengthSort);
+
+// 4) Sort an array alphabetically
+const alphabeticallySort = ["dog", "wolf", "by", "family", "eaten"];
+
+alphabeticallySort.sort();
+console.log(alphabeticallySort);
+
+// 5) Sort the objects in the array by age
+
+const sortByAge = [
+  { name: "Quiet Samurai", age: 22 },
+  { name: "Arrogant Ambassador", age: 100 },
+  { name: "Misunderstood Observer", age: 2 },
+  { name: "Unlucky Swami", age: 77 },
 ];
 
-let areTheyIlluminati = celebrities.filter(function (person) {
-  if (person.member === true) {
-    return person.name;
-  }
-});
-
-console.log(areTheyIlluminati);
-
-//5) Make a filtered list of all the people who are old enough to see The Matrix (older than 18)
-
-const peeps = [
-  { name: "Angelina Jolie", age: 80 },
-  { name: "Eric Jones", age: 2 },
-  { name: "Paris Hilton", age: 5 },
-  { name: "Kayne West", age: 16 },
-  { name: "Bob Ziroll", age: 100 },
-];
-
-let canSeeMovie = peeps.filter(function (person) {
-  if (person.age >= 18) {
-    return true;
-  }
-});
-console.log(canSeeMovie);
+sortByAge.sort((a, b) => a.age - b.age);
+console.log(sortByAge);

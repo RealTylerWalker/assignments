@@ -1,0 +1,63 @@
+{
+    "Appetizers": [
+      {
+        "name": "Crazy Nachos",
+        "ingredients": ["tortilla chips", "nacho cheese"],
+        "description": "Our lovely handmade nachos"
+      },
+      {
+        "name": "Bloomin' Onion",
+        "ingredients": ["deep fried onions", "bread crumbs"],
+        "description": "A delicious onion, dipped in a creamy bread crumb batter, and then sliced into strips that easily be pulled off."
+      }
+    ],
+    "Cold Sandwhiches": [
+      {
+        "name": "The Clubbed Turkey",
+        "ingredients": ["Wheat or white bread", "provolone", "honey roasted Turkey", "our special sauce"],
+        "description": "Hand crafted with love, this delectable turkey sandwich is sure to club your expectations"
+      },
+      {
+        "name": "Chicken club",
+        "ingredients": ["onions", "bread", "sauce", "chicken"],
+        "description": "A good chicken sandwhich."
+      }
+    ],
+    "Hot Sandwhiches": [
+      {
+        "name": "The Beeferino",
+        "ingredients": ["Wheat or white bread", "smoked cheddar cheese", "Rusty's Special Carriage Beef", "signature Beeferino sauce"],
+        "description": "This sandwich recreates the feeling of being taken around New York City in a Handsome Cab that is being pulled by a rather flatulent horse."
+      },
+      {
+        "name": "The David Copperfield",
+        "ingredients": ["meet", "bread", "other sandwhich items"],
+        "description": "Become a magician by making this delicious sandwhich disappear in under 15 seconds."
+      }
+    ],
+    "Desserts": [
+      {
+        "name": "Drakes Coffee Cake",
+        "ingredients": ["eggs", "flour", "coffee beans"],
+        "description": "If used as a bribe, this delicious pastry is sure to dissuade your nemesis from telling your next door neighbor that you were having an affair with his wife while he was in a coma."
+      },
+      {
+        "name": "Hostess Cupcakes",
+        "ingredients": ["cocoa", "whipped cream", "other stuff"],
+        "description": "They're Hostess cupcakes, you know what they are!"
+      }
+    ],
+    "Drinks": [
+      {
+        "name": "The Honeymoon",
+        "ingredients": ["diet coke", "raspberry puree", "whipping cream"],
+        "description": "If used as a bribe, this delicious pastry is sure to dissuade your nemesis from telling your next door neighbor that you were having an affair with his wife while he was in a coma."
+      },
+      {
+        "name": "Original Coca Cola",
+        "ingredients": ["cola", "sparkling water", "a dash of cocaine"],
+        "description": "Surgeon General Warning: cocaine is addictive, albeit delicious."
+      }
+    ]
+  }
+  

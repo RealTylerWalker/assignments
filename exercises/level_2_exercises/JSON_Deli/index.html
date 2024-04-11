@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <form name="form">
+            <div name="name">
+                <span>Name:</span>
+                <input type="text" name="firstName" placeholder="First Name" required>
+                <input type="text" name="lastName" placeholder="Last Name" required>
+            </div>
+
+            <div>
+                <span>Age:</span>
+                <input type="number" name="age" required>
+            </div>
+
+            <div>
+                <span>Gender:</span>
+                Male <input type="radio" name="gender" value="male" required>
+                Female <input type="radio" name="gender" value="female" required>
+            </div>
+
+            <div>
+                <span>Destination:</span>
+                <select name="destination" required>
+                    <option value="Boise, ID">Boise, ID</option>
+                    <option value="Portland, OR">Portland, OR</option>
+                    <option value="Los Angeles, CA">Los Angeles, CA</option>
+                </select>
+            </div>
+
+            <div>
+                <span>Health Restrictions:</span>
+                Asthma:<input type="checkbox" value="Asthma" name="restrictions">
+                Peanut Allergy:<input type="checkbox" value="Peanut Allergy" name="restrictions">
+                Vegetarian:<input type="checkbox" value="Vegetarian" name="restrictions">
+                None:<input type="checkbox" value="None" name="restrictions">
+            </div>
+            <div>
+                <button>Submit</button>
+            </div>
+
+        </form>
+
+        <script src="app.js"></script>
+    </body>
+
+</html>

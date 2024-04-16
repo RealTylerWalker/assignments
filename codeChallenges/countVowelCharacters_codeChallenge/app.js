@@ -11,3 +11,4 @@ function countVowels(str) {
 console.log(countVowels("hello")); // Expected output: 2 (e, o)
 console.log(countVowels("programming")); // Expected output: 3 (o, a, i)
 console.log(countVowels("javascript")); // Expected output: 3 (a, a, i)
+push;

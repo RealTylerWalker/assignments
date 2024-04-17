@@ -1,20 +1,27 @@
-// Get All
-// axios
-//   .get("https://api.vschool.io/tylerwalker/todo")
-//   .then((response) => {
-//     for (let i = 0; i < response.data.length; i++) {
-//       const h1 = document.createElement("h1");
-//       h1.textContent = response.data[i].title;
-//       document.body.appendChild(h1);
-//     }
-//   })
-//   .catch((error) => console.log(error));
+// Code Challenge
 
-// Get One
+// Given a string, return true or false whether every character is capitalized
 
-// axios.get("https://api.vschool.io/tylerwalker/todo/6618624c78fe452c114b7b4e")
-// .then((response) => console.log(response.data))
-// .catch((error) => console.log(error));
+// Constraints:
+// 1) Assume string only contains letters A-Z and a-z
+// 2) Assume string length is >= 0
 
-// Post Request
-// Request Body
+// const isUpperCase = (str) => str === str.toUpperCase();
+
+const isUpperCase = (str) => {
+  if (str === "") {
+    console.log("You need to type something");
+    return false;
+  }
+  if (str === str.toUpperCase()) {
+    return true;
+  } else {
+    return false;
+  }
+};
+console.log(isUpperCase());
+
+//examples:
+// isUpperCase("ABC") --> true
+// isUpperCase("Abc") --> false
+// usUpperCase("aBcD") --> false

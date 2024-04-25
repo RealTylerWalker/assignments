@@ -2,6 +2,7 @@
 <html lang="en">
 
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
@@ -9,16 +10,40 @@
     </head>
 
     <body>
-        <form name="todoForm">
+
+        <header>
+            <div class="header-content">
+                <nav class="header-elements">
+                    <h3 class="header-element">Level 2 Capstone</h3>
+                    <h3 class="header-element" id="header-title">Axios ToDo List</h3>
+                    <h3 class="header-element">Tyler Walker</h3>
+                </nav>
+            </div>
+
+        </header>
+
+        <div id="title">
+            "If onlys and justs were candies and nuts, then every day would be Erntedankfest."
+            - Dwight
+        </div>
+
+        <form name="todoForm" class="new-input-form">
+            <h1>Add ToDo Form</h1>
             <input name="title" placeholder="Title" />
             <input name="description" placeholder="Description" />
+            <input name="price" type="number" placeholder="price">
             <input name="imgUrl" placeholder="Img URL" />
             <input type="submit" value="submit">
         </form>
 
         <div id="todo-list">
-
         </div>
+
+        <div class="instructions">
+            <p>Scroll to see your todos.</p>
+        </div>
+
+        <footer></footer>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js">
         </script>

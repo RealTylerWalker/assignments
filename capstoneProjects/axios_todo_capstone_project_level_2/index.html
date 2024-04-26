@@ -5,11 +5,12 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Level 2 Capstone</title>
         <link rel="stylesheet" href="styles.css">
     </head>
 
     <body>
+
 
         <header>
             <div class="header-content">
@@ -21,26 +22,32 @@
             </div>
 
         </header>
-
         <div id="title">
             "If onlys and justs were candies and nuts, then every day would be Erntedankfest."
             - Dwight
         </div>
+        <div class="mainDiv">
 
-        <form name="todoForm" class="new-input-form">
-            <h1>Add ToDo Form</h1>
-            <input name="title" placeholder="Title" />
-            <input name="description" placeholder="Description" />
-            <input name="price" type="number" placeholder="price">
-            <input name="imgUrl" placeholder="Img URL" />
-            <input type="submit" value="submit">
-        </form>
 
-        <div id="todo-list">
-        </div>
+            <div class="divForm">
+                <form name="todoForm" class="new-input-form">
+                    <h1>Add ToDo Form</h1>
+                    <input name="title" placeholder="Title" />
+                    <input name="description" placeholder="Description" />
+                    <input name="price" type="number" placeholder="price">
+                    <input name="imgUrl" placeholder="Img URL" />
+                    <input class="submitInput" type="submit" value="submit">
+                </form>
+            </div>
 
-        <div class="instructions">
-            <p>Scroll to see your todos.</p>
+            <div id="todo-list">
+            </div>
+
+            <div class="priceDiv">
+                <p id="projectedTotalPrice"></p>
+                <p id="actualTotalPrice"></p>
+            </div>
+
         </div>
 
         <footer></footer>

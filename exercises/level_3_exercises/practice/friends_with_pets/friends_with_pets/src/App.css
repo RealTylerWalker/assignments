@@ -1,0 +1,62 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.friend-container {
+  width: 40vh;
+  display: flex;
+  background-color: white;
+  color: black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh;
+  border-radius: 8vh;
+}
+
+.name-age {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+}
+
+.pet-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
+}
+
+.name-breed-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.friend-id {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(231, 231, 231);
+  width: 30px;
+  height: 30px;
+  border-radius: 35vh;
+}
+
+.pet-id {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(212, 212, 212);
+  width: 30px;
+  height: 30px;
+  border-radius: 35vh;
+}

@@ -1,0 +1,85 @@
+.header {
+  position: relative;
+  background: url("../../assets/bg.jpg");
+  background-position: center;
+  height: 532px;
+}
+
+.bgImage {
+  position: absolute;
+  filter: brightness(60%);
+  top: 75%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Adjust position to truly center based on its own dimensions */
+  max-height: 100vh; /* Limit the height to 90% of the viewport height */
+  width: 100%; /* Maintain the aspect ratio */
+  z-index: -1;
+}
+.nav-list a,
+.bootstrapButton {
+  color: white;
+  text-decoration: none;
+  margin-top: 6vh;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.nav-container :hover {
+  color: #0085a1;
+}
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin-right: 25vh;
+  gap: 1vh;
+  margin-top: 25px;
+}
+
+.bootstrapButton {
+  margin-top: 25px;
+  margin-left: 25vh;
+  font-family: open sans;
+  font-weight: 900;
+  font-size: 20px;
+}
+.nav-list a {
+  font-family: open sans;
+  font-size: 12px;
+  padding: 24px 16px;
+  font-weight: 800;
+}
+.nav-list :hover {
+  color: #0085a1;
+}
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.header-title {
+  font-family: open sans;
+  font-size: 80px;
+  font-weight: 800;
+  color: white;
+}
+.title-subheading {
+  font-family: open sans;
+  font-weight: 300;
+  font-size: 24px;
+  color: white;
+}
+
+/* title-container
+header-title
+title-subheading */

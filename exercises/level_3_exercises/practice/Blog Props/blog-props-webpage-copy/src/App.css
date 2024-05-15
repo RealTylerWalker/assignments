@@ -1,0 +1,22 @@
+/* CSS Reset to remove margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow-x: hidden;
+}
+
+body {
+  line-height: 1.6; /* Good default line height */
+}
+
+.hero-separator {
+  border: solid 0.5px #dee2e6;
+  margin-bottom: 1rem;
+}

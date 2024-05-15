@@ -1,0 +1,60 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  width: 45vh;
+  font-size: 12px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  width: 100%;
+  border-radius: 9px 9px 0px 0px;
+  margin-bottom: 9px;
+}
+.card-container {
+  width: 40vh;
+  font-size: 12px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5vh;
+  border-radius: 9px;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+}
+
+.card-spring {
+  background-color: #f0e68c;
+  border-radius: 9px;
+  color: black;
+}
+.card-summer {
+  background-color: #f08080;
+  border-radius: 9px;
+  color: black;
+}
+.card-fall {
+  background-color: #ffdead;
+  border-radius: 9px;
+  color: black;
+}
+.card-winter {
+  background-color: #add8e6;
+  border-radius: 9px;
+  color: black;
+}

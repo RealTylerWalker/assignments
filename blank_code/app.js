@@ -1,27 +1,37 @@
-// Code Challenge
+const numbers = [2, 3, 5, 6, 7, 23];
 
-// Given a string, return true or false whether every character is capitalized
+const doubleNumbers = numbers.map((number) => number * 2);
+console.log(doubleNumbers);
 
-// Constraints:
-// 1) Assume string only contains letters A-Z and a-z
-// 2) Assume string length is >= 0
+const numbersToStrings = [2, 3, 5, 6, 7, 23];
 
-// const isUpperCase = (str) => str === str.toUpperCase();
+const stringItUp = numbersToStrings.map((arr) => {
+  return arr.toString();
+});
+console.log(stringItUp);
 
-const isUpperCase = (str) => {
-  if (str === "") {
-    console.log("You need to type something");
-    return false;
-  }
-  if (str === str.toUpperCase()) {
-    return true;
-  } else {
-    return false;
-  }
-};
-console.log(isUpperCase());
+const people = [
+  {
+    name: "Angelina Jolie",
+    age: 80,
+  },
+  {
+    name: "Eric Jones",
+    age: 2,
+  },
+  {
+    name: "Paris Hilton",
+    age: 5,
+  },
+  {
+    name: "Kayne West",
+    age: 16,
+  },
+  {
+    name: "Bob Ziroll",
+    age: 100,
+  },
+];
 
-//examples:
-// isUpperCase("ABC") --> true
-// isUpperCase("Abc") --> false
-// usUpperCase("aBcD") --> false
+const onlyNames = people.map((person) => person.name);
+console.log(onlyNames);

@@ -1,0 +1,24 @@
+.footer-container {
+  margin: 0px -24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  padding: 24px;
+  font-family: lora;
+  font-size: 17.5;
+  font-style: italic;
+  color: #6c757d;
+  gap: 10px;
+}
+
+.smLinks-container a {
+  color: #6c757d;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.smLinks-container a:hover {
+  color: #0085a1;
+}

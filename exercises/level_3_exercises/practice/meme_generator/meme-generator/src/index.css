@@ -1,0 +1,16 @@
+/* html { */
+/* font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  margin: 0px;
+  padding: 0px; */
+/* font-family: "Karla", sans-serif;
+  font-optical-sizing: auto; */
+/* } */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}

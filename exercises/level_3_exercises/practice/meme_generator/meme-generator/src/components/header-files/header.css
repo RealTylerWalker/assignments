@@ -1,0 +1,33 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  color: white;
+  padding: 20px;
+}
+.logo {
+  font-family: "karla", sans-serif;
+  font-weight: 700;
+  font-size: 20.75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3vh;
+}
+
+.header-image {
+  width: 31.31px;
+  height: 26.22px;
+  margin-right: 6px;
+}
+
+.header-title {
+  font-family: "inter", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-right: 3vh;
+}

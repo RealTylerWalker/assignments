@@ -6,6 +6,44 @@
   margin: 30px;
   gap: 20px;
 }
+.meme {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  gap: 2vh;
+}
+.meme-image {
+  max-width: 100%;
+  border-radius: 3px;
+}
+.meme-text {
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
+}
+
+.top {
+  top: 0;
+}
+.bottom {
+  bottom: 0;
+}
+
 .input-container {
   display: flex;
   flex-direction: row;
@@ -28,7 +66,7 @@
   height: 34.74px;
   border-radius: 4.91px;
   border: solid 1px;
-  color: rgba(209, 213, 219, 1);
+  color: rgb(70, 70, 70);
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -41,7 +79,7 @@
   height: 34.74px;
   border-radius: 4.91px;
   border: solid 1px;
-  color: rgba(209, 213, 219, 1);
+  color: rgba(70, 70, 70);
 }
 
 .bottom-text-container {
@@ -69,13 +107,76 @@
 }
 
 .button {
+  grid-column: 1 / -1;
   font-size: 16px;
   color: white;
   font-weight: 700;
   height: 40px;
   background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
-  width: 477px;
+  width: 50vh;
   border-radius: 5px;
   border: solid 1px transparent;
   letter-spacing: -0.5px;
+  cursor: pointer;
+  transition: background-color 0.6s, color 0s;
+}
+
+.button:hover {
+  background: linear-gradient(90deg, #a626d3 1.18%, #672280 100%);
+}
+
+.save-button {
+  grid-column: 1 / -1;
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  height: 40px;
+  background: linear-gradient(90deg, #fe6262 1.18%, #ff9138 100%);
+  width: 30vh;
+  border-radius: 5px;
+  border: none;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+  transition: background-color 0.6s, color 0s;
+}
+
+hr {
+  width: 100%; /* Add this line to ensure the horizontal line spans the entire width */
+  border: none;
+  border-top: 1px solid black; /* Add this line to set the style of the horizontal line */
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+}
+
+.deleteButton {
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  height: 40px;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  width: 10vh;
+  border-radius: 5px;
+  border: solid 1px transparent;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+  transition: background-color 0.6s, color 0s;
+}
+.editButton {
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  height: 40px;
+  background: linear-gradient(90deg, #fe6262 1.18%, #ff9138 100%);
+  width: 10vh;
+  border-radius: 5px;
+  border: solid 1px transparent;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+  transition: background-color 0.6s, color 0s;
 }

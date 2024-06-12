@@ -134,19 +134,19 @@ function App() {
     setColorBoxes([
       {
         id: 1,
-        color: "green",
+        color: boxes[0].color === "red" ? "green" : "red",
       },
       {
         id: 2,
-        color: "red",
+        color: boxes[1].color === "green" ? "red" : "green",
       },
       {
         id: 3,
-        color: "red",
+        color: boxes[2].color === "red" ? "green" : "red",
       },
       {
         id: 4,
-        color: "green",
+        color: boxes[3].color === "green" ? "red" : "green",
       },
     ]);
   }

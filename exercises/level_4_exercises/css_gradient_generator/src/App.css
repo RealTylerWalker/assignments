@@ -1,0 +1,72 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.generatorContainer {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+}
+
+.leftBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px black;
+  width: 50%;
+  height: 50vh;
+  padding: 2vh;
+  gap: 2vh;
+}
+
+.gradientDisplay {
+  border: solid 1px black;
+  width: 98%;
+  height: 60%;
+  border-radius: 9px;
+}
+
+.gradientCssInfo {
+  width: 98%;
+  border: solid 1px black;
+  height: 40%;
+  background-color: rgb(11, 77, 92);
+  border-radius: 8px;
+}
+
+.rightBox {
+  border: solid 1px black;
+  width: 50%;
+  height: 50vh;
+  padding: 2vh;
+}
+
+.color1Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5vh;
+}
+
+.color1Input {
+  width: 20%;
+}
+.color2Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5vh;
+}
+.color2Input {
+  width: 20%;
+}
+.cssText {
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  margin: 2vh;
+}

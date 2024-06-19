@@ -1,11 +1,11 @@
 import React from "react";
-import ThemeContext from "../context/ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 
 function HeaderComp(props) {
-  const context = React.useContext(ThemeContext);
-  console.log(context);
+  const { theme } = React.useContext(ThemeContext);
+
   return (
-    <div className={`${context.theme}-theme-header`}>
+    <div className={`${theme}-theme-header`}>
       <div className="title">
         <h1>TOGGLE THEME APP</h1>
       </div>

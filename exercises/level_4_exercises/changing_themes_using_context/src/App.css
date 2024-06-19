@@ -3,12 +3,22 @@ body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
 }
-.body {
+
+.light-body {
   display: flex;
   justify-content: center;
+  background-color: white;
 }
 
-.button {
+.dark-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(51, 51, 51);
+  color: white;
+}
+
+.light-button {
   padding: 10px 20px;
   font-size: 48px;
   width: 60vh;
@@ -20,21 +30,60 @@ body {
   color: white;
 }
 
-.button:hover {
-  width: 70vh;
-  height: 30vh;
-  font-size: 60px;
-  transition: ease 0.8s;
+.light-button:hover {
+  width: 62vh;
+  height: 26vh;
+  font-size: 54px;
+  transition: ease-in 0.5s;
 }
 
-.headerContainer {
+.dark-button {
+  padding: 10px 20px;
+  font-size: 48px;
+  width: 60vh;
+  height: 25vh;
+  border: none;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.911);
+  cursor: pointer;
+  color: white;
+}
+
+.dark-button:hover {
+  width: 62vh;
+  height: 26vh;
+  font-size: 54px;
+  transition: ease-in 0.5s;
+}
+
+p {
+  color: rgb(102, 102, 102);
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.light-theme-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
   height: 60px;
-  height: 35%;
   background-color: bisque;
+}
+
+.dark-theme-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 60px;
+  background-color: rgb(0, 0, 0);
+  color: white;
 }
 
 .title {
@@ -57,12 +106,19 @@ body {
 
 .componentContainer {
   display: grid;
+  grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
 
-.footer {
+.light-footer {
   display: flex;
   justify-content: center;
   background-color: bisque;
+}
+.dark-footer {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+  color: rgb(116, 116, 116);
 }

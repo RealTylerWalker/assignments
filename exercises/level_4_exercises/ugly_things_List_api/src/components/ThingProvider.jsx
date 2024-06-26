@@ -20,10 +20,6 @@ export default function ThingProvider({ children }) {
       .catch((err) => {
         console.log(err);
       });
-
-    //
-    // make POST
-    // add item to array with setThings()
   }
 
   function getThings() {
@@ -35,16 +31,33 @@ export default function ThingProvider({ children }) {
       .catch((err) => console.log(err));
   }
 
-  function deleteThing(id) {}
+  function deleteThing(id) {
+    axios
+      .delete(`https://api.vschool.io/tylerwalker/thing/${id}`)
+      .then(() => getThings())
+      .catch((err) => console.log(err));
+  }
+
+  function updateThing(id, thing) {
+    axios
+      .put(`https://api.vschool.io/tylerwalker/thing/${id}`, thing)
+      .then((response) => {
+        setThings((prevThings) =>
+          prevThings.map((prevThing) => {
+            return prevThing._id === id ? response.data : prevThing;
+          })
+        );
+      })
+      .catch((err) => console.log(err));
+  }
 
   return (
     <ThingContext.Provider
       value={{
         things,
         createThing,
-
-        // delete
-        // update
+        deleteThing,
+        updateThing,
       }}
     >
       {children}

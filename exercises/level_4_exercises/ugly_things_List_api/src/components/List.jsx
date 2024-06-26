@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import ListItem from "./ListItem";
+import { ThingContext } from "./ThingProvider";
 
-export default function List(props) {
+export default function List() {
+  const { things, deleteThing } = useContext(ThingContext);
   return (
     <div>
       <ul>
-        {props.things.map((thing) => (
-          <ListItem key={thing._id} thing={thing} />
+        {things.map((thing) => (
+          <ListItem key={thing._id} thing={thing} deleteThing={deleteThing} />
         ))}
       </ul>
     </div>

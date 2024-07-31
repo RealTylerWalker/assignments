@@ -45,4 +45,23 @@
     - requests to my server will begin simply with a "/"
     - requests to an external server will begin with a "https://"
 
-#
+# Error Handling 
+    -For the server.js file (This is a global error handler)
+    app.use( (err, req, res, next) => {
+    console.log(err)
+    return res.send({errMsg: err.message})
+})
+
+    -For the client.js file (this is the logic if you are not using an api)
+    if(!foundBounty){
+        const error = new Error(`The bounty with the id of ${bountyId} was not found.`)
+        return next(error) 
+    }
+    res.status(200).send(foundBounty)
+
+# Status Codes  
+    # 200 - sucessful request
+    # 201 - Successful Insert (added something to the database) / Succesful Update (updated something in the database)
+    # 401 - not authorized
+    # 404 - not found
+    # 500 - server error

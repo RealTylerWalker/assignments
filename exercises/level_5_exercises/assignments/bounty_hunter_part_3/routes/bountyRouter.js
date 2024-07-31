@@ -40,15 +40,21 @@ const bounties = [
 // Get All
 
 bountyRouter.get("/", (req, res) => {
+    res.status(200)
     res.send(bounties)   
 })
 
 // Get one
 
-bountyRouter.get("/:bountyId", (req, res) => {
+bountyRouter.get("/:bountyId", (req, res, next) => {
     const bountyId = req.params.bountyId
     const foundBounty = bounties.find(bounty => bounty._id === bountyId)
-    res.send(foundBounty)
+    if(!foundBounty){
+        const error = new Error(`The bounty with the id of ${bountyId} was not found.`)
+        res.status(500)
+        return next(error) 
+    }
+    res.status(200).send(foundBounty)
 })
 
 
@@ -59,7 +65,7 @@ bountyRouter.post("/", (req, res) => {
     // Add a unique ID to every new post request
     newBounty._id = uuid()
     bounties.push(newBounty)
-    res.send(newBounty)
+    res.status(201).send(newBounty)
 })
 
 // Delete one
@@ -81,7 +87,7 @@ bountyRouter.put("/:bountyId", (req, res) => {
     const bountyId = req.params.bountyId
     const bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId)
     const updatedBounty = Object.assign(bounties[bountyIndex], req.body)
-    res.send(updatedBounty)
+    res.status(201).send(updatedBounty)
 })
 
 

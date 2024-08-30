@@ -27,3 +27,6 @@ PORT= //choose a port
  SECRET= //choose a secret (it will usually be four random words)
 
 8. in the routes folder create a file called user.js, read what is inside the file for what you should do next
+9. create authRouter file inside the route folder 
+10. install a jsonwebtoken package so we can use JWS tokens
+

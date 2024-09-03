@@ -31,3 +31,7 @@ PORT= //choose a port
 10. install a jsonwebtoken package so we can use JWS tokens
 11. npm i express-jwt 
 
+export default defineConfig({
+  plugins: [react()],
+
+});

@@ -93,6 +93,18 @@ function UserProvider(props) {
         }
     }
 
+    async function deleteIssue(issueId) {
+        try {
+            const res = await userAxios.delete(`/api/main/issues/${issueId}`)
+            setUserState(prevState => ({
+                ...prevState,
+                issues: prevState.issues.filter(issue => issue._id !== issueId)
+            }))
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <UserContext.Provider value={{
             ...userState,
@@ -100,7 +112,8 @@ function UserProvider(props) {
             login,
             logout,
             getUserIssues,
-            addIssue
+            addIssue,
+            deleteIssue
 
         }}>
             {props.children}

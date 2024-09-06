@@ -10,7 +10,6 @@ function Profile() {
         getUserIssues();
     }, []);
 
-    console.log(issues)
 
     return (
         <>

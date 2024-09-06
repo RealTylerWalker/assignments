@@ -1,22 +1,11 @@
-import axios from "axios"
+import { useContext } from 'react'
+import { UserContext } from '../context/UserProvider'
 
 export default function Issue(props) {
 
+    const { deleteIssue } = useContext(UserContext)
+
     const { title, description, imgUrl, _id } = props
-
-    function deleteItem(id) {
-        axios.delete(`/api/issues/${id}`)
-            .then(res => {
-                console.log(res.data)
-            })
-            .catch(error => console.log(error))
-    }
-
-    function handleDelete() {
-
-        deleteItem(_id)
-    }
-
 
 
     return (
@@ -26,7 +15,7 @@ export default function Issue(props) {
             <p>ID: {_id}</p>
             <img src={imgUrl} />
             <button >Edit</button>
-            <button onClick={handleDelete}>Delete</button>
+            <button onClick={() => deleteIssue(_id)}>Delete</button>
         </div>
     )
 }

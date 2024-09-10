@@ -45,8 +45,10 @@ issueRouter.get('/user/:id', async (req, res, next) => {
 
 // update issue 
 issueRouter.put("/:id", async (req, res, next) => {
+    console.log(req.params.id, req.body)
     try {
         const id = req.params.id
+        
         const updatedIssue = await Issue.findOneAndUpdate({_id: req.params.id, userId: req.auth._id}, req.body, { new: true })
         if (!updatedIssue) {
             return res.status(404).send("Issue not found")

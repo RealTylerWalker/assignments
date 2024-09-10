@@ -7,6 +7,7 @@ function Profile() {
     const { user, getUserIssues, issues } = useContext(UserContext);
 
     useEffect(() => {
+        console.log("issues:", issues)
         getUserIssues();
     }, []);
 

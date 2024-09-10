@@ -7,7 +7,7 @@ export default function IssueList(props) {
 
     const issueElements = issues.map(issue => {
         return (
-            <Issue {...issue} key={issue._id} />
+            <Issue issue={issue} key={issue._id} />
         )
     })
 

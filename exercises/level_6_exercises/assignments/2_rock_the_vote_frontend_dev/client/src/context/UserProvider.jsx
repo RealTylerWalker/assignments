@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 
 export const UserContext = React.createContext();
@@ -81,6 +81,9 @@ function UserProvider(props) {
         }
     }
 
+
+
+
     async function addIssue(newIssue) {
         try {
             const res = await userAxios.post('/api/main/issues', newIssue)
@@ -91,19 +94,49 @@ function UserProvider(props) {
         } catch (error) {
             console.log(error)
         }
+        setForceUpdate(false)
+    }
+
+    // edit issue function
+    async function editIssue(issueId, updatedData) {
+
+        try {
+            console.log("Tryna edit")
+            const res = await userAxios.put(`/api/main/issues/${issueId}`, updatedData)
+            console.log("updated issue data:", res.data)
+            console.log(issueId === res.data._id)
+            setUserState(prevState => ({
+                ...prevState,
+                issues: prevState.issues.map(issue =>
+                    issue._id === issueId ? res.data : issue
+                )
+            }))
+        } catch (error) {
+            console.log(error)
+        }
+        setForceUpdate(true)
     }
 
     async function deleteIssue(issueId) {
         try {
+            console.log(issueId, "Issue: ")
             const res = await userAxios.delete(`/api/main/issues/${issueId}`)
             setUserState(prevState => ({
                 ...prevState,
                 issues: prevState.issues.filter(issue => issue._id !== issueId)
             }))
+
+            alert(issue._id)
         } catch (error) {
             console.log(error)
         }
     }
+
+    const [forceUpdate, setForceUpdate] = useState(false)
+
+    useEffect(() => {
+        getUserIssues()
+    }, [forceUpdate])
 
     return (
         <UserContext.Provider value={{
@@ -113,7 +146,9 @@ function UserProvider(props) {
             logout,
             getUserIssues,
             addIssue,
-            deleteIssue
+            deleteIssue,
+            setForceUpdate,
+            editIssue
 
         }}>
             {props.children}

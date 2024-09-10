@@ -35,10 +35,13 @@ export default function Issue(props) {
 }
 
 function IssueCard(props) {
-    const { issue: { title, description, imgUrl, _id }, handleEdit, deleteIssue } = props
+    console.log(props)
+    const { issue: { title, description, imgUrl, _id, userId }, handleEdit, deleteIssue } = props
     return (<div className="issue-card">
+
         <h1>Title: {title}</h1>
         <h4>Description: {description}</h4>
+        <p>User ID: {userId}</p>
         <p>ID: {_id}</p>
         <img src={imgUrl} />
         <button onClick={handleEdit}>Edit</button>

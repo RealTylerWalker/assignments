@@ -78,9 +78,28 @@ function UserProvider(props) {
             }))
         } catch (error) {
             console.log(error)
+            setUserState(prevState => ({
+                ...prevState,
+                issues: []
+            }))
         }
     }
 
+    async function getAllIssues() {
+        try {
+            const res = await userAxios.get('/api/main/issues')
+            setUserState(prevState => ({
+                ...prevState,
+                issues: res.data
+            }))
+        } catch (error) {
+            console.log(error)
+            setUserState(prevState => ({
+                ...prevState,
+                issues: []
+            }))
+        }
+    }
 
 
 
@@ -148,7 +167,8 @@ function UserProvider(props) {
             addIssue,
             deleteIssue,
             setForceUpdate,
-            editIssue
+            editIssue,
+            getAllIssues
 
         }}>
             {props.children}

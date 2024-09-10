@@ -43,6 +43,17 @@ issueRouter.get('/user/:id', async (req, res, next) => {
     }
 })
 
+//get all issues function
+issueRouter.get('/', async(req, res, next) => {
+    try {
+        const foundIssues = await Issue.find()
+        return res.status(200).send(foundIssues)
+    } catch (error) {
+        res.status(500)
+        return next(error)
+    }
+})
+    
 // update issue 
 issueRouter.put("/:id", async (req, res, next) => {
     console.log(req.params.id, req.body)
@@ -74,19 +85,6 @@ issueRouter.delete("/:id", async (req, res, next) => {
         return next(error)
     }
 })
-// issueRouter.delete("/:id", async (req, res, next) => {
-//     try {
-//         const id = req.params.id
-//         const deletedIssue = await Issue.findOneAndDelete({_id: req.params.id, userId: req.auth._id})
-//         if (!deletedIssue) {
-//             return res.status(404).send("Issue not found")
-//         }
-       
-//         return res.status(200).send(`issue with id ${id} deleted`)
-//     } catch (error) {
-//         res.status(500)
-//         return next(error)
-//     }
-// })
+
 
 module.exports = issueRouter
